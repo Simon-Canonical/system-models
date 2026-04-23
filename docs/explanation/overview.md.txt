@@ -1,0 +1,122 @@
+# System Overview
+
+## Why this system exists
+
+Correctness is difficult to define and maintain in most systems.
+
+State is often treated as authoritative, even though it is:
+
+- derived through execution  
+- influenced by timing and ordering  
+- difficult to validate consistently  
+
+As systems evolve, this leads to:
+
+- inconsistent state representations  
+- hidden divergence between components  
+- unclear guarantees about correctness  
+
+This system addresses that problem by redefining how correctness is evaluated.
+
+---
+
+## What this system changes
+
+Instead of treating runtime state as the source of truth, the system defines:
+
+- the **Canonical Event Sequence** as the only authoritative source  
+- all **Booking State** as derived  
+- correctness as a property of **Deterministic Reconstruction**  
+
+This shifts the model from:
+
+- “state is assumed correct”  
+
+to:
+
+- “state is correct only if it matches reconstruction”
+
+---
+
+## Core idea
+
+All system state is derived from a sequence of events.
+
+If the same sequence is processed again:
+
+- it must produce the same result  
+
+This is **Deterministic Reconstruction**.
+
+Correctness is evaluated by comparing:
+
+- runtime **Derived State**  
+- reconstructed **Booking State**  
+
+When they match, the system satisfies **Convergence**.
+
+---
+
+## Key concepts
+
+The system is built around a small set of concepts:
+
+- **Canonical Event Sequence**  
+  the source of truth  
+
+- **Derived State**  
+  observable state produced from events  
+
+- **Deterministic Reconstruction**  
+  the ability to recompute state from events  
+
+- **Convergence**  
+  equality between runtime state and reconstructed state  
+
+- **Correctness**  
+  defined through derivability, reconstruction, and constraints  
+
+Definitions are specified in `terminology.md`.
+
+---
+
+## How the system is structured
+
+The repository is divided into two layers:
+
+### Specification layer (authoritative)
+
+- `convergence-correctness-model.md`  
+- `principles.md`  
+- `terminology.md`  
+- `status.md`  
+
+These define:
+
+- what correctness means  
+- what rules apply  
+- what exists  
+
+---
+
+### Explanation layer (this layer)
+
+- explains how to interpret the system  
+- provides intuition and context  
+- does not define behavior  
+
+---
+
+## What this enables
+
+By defining correctness through reconstruction and convergence, the system:
+
+- separates truth from execution  
+- removes reliance on runtime behavior  
+- provides a clear, verifiable correctness model  
+
+The result is a system where correctness is:
+
+- defined explicitly  
+- evaluated deterministically  
+- independent of execution timing  

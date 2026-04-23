@@ -1,0 +1,122 @@
+# How It Works
+
+## Overview
+
+The system operates by deriving all state from a canonical sequence of events.
+
+At any point, state can be understood as:
+
+- a result of processing the **Canonical Event Sequence**
+
+---
+
+## Step 1 — Canonical Event Sequence
+
+All changes are represented as events.
+
+These events form a single ordered sequence:
+
+- the **Canonical Event Sequence**
+
+This sequence is the only authoritative input to the system.
+
+---
+
+## Step 2 — Derived State
+
+From this sequence, the system produces **Derived State**.
+
+Derived state is:
+
+- what the system currently shows  
+- what users or other components observe  
+
+It is not authoritative.
+
+---
+
+## Step 3 — Deterministic Reconstruction
+
+The same event sequence can be processed again.
+
+If the system is correct:
+
+- processing the same sequence must produce the same result  
+
+This process is **Deterministic Reconstruction**.
+
+---
+
+## Step 4 — Comparison
+
+Correctness is evaluated by comparing:
+
+- runtime **Derived State**  
+- reconstructed **Booking State**
+
+If they are identical:
+
+- the system satisfies **Convergence**
+
+---
+
+## What convergence means in practice
+
+Convergence means:
+
+- runtime state matches reconstructed state  
+
+This is not assumed.
+
+It is something that must hold for correctness.
+
+If the two differ:
+
+- the system is not in a valid state  
+
+---
+
+## What determines correctness
+
+Correctness is not based on:
+
+- whether operations succeeded  
+- whether data “looks right”  
+
+Instead, correctness requires:
+
+- state can be derived from the canonical event sequence  
+- reconstruction produces the same result  
+- system constraints are satisfied  
+
+---
+
+## Why this approach is different
+
+Traditional systems rely on:
+
+- direct state mutation  
+- validation at write time  
+- assumptions about execution correctness  
+
+This system instead:
+
+- derives state from events  
+- evaluates correctness through reconstruction  
+- treats runtime state as something to verify, not trust  
+
+---
+
+## Result
+
+The system creates a clear separation between:
+
+- what happened (events)  
+- what is shown (derived state)  
+- what is correct (reconstruction equivalence)  
+
+This makes correctness:
+
+- explicit  
+- testable  
+- independent of execution behavior  

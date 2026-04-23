@@ -1,0 +1,106 @@
+# Why Convergence
+
+## The problem with traditional correctness
+
+Most systems validate correctness at the moment of change.
+
+They rely on:
+
+- validation rules  
+- constraints  
+- execution success  
+
+This creates assumptions:
+
+- if validation passed, state is correct  
+- if execution succeeded, result is valid  
+
+Over time, these assumptions break down:
+
+- state may drift  
+- multiple representations may diverge  
+- correctness becomes difficult to verify  
+
+---
+
+## Limits of state-based validation
+
+Validating state directly has limitations:
+
+- state is the result of execution, not the source  
+- execution may involve ordering and timing effects  
+- different paths may produce different results  
+
+This means:
+
+- state correctness is difficult to prove  
+
+---
+
+## Reconstruction as a stronger model
+
+Instead of trusting state, this system uses reconstruction.
+
+The idea is simple:
+
+- if state can be recomputed from events  
+- and recomputation produces the same result  
+
+then the state is correct  
+
+This removes reliance on:
+
+- execution timing  
+- intermediate behavior  
+
+---
+
+## Why convergence matters
+
+Convergence defines correctness as:
+
+- equality between runtime state and reconstructed state  
+
+This has important implications:
+
+- correctness becomes verifiable  
+- divergence becomes detectable  
+- correctness does not depend on how the system executed  
+
+---
+
+## What this eliminates
+
+This model removes several common problems:
+
+- hidden divergence between components  
+- reliance on implicit execution behavior  
+- uncertainty about whether state is correct  
+
+---
+
+## What this enables
+
+By defining correctness through convergence:
+
+- correctness becomes a property of data, not execution  
+- state can be validated independently  
+- the system has a clear, consistent correctness definition  
+
+---
+
+## Summary
+
+Convergence is used because:
+
+- state alone is not reliable  
+- execution cannot be trusted implicitly  
+- reconstruction provides a deterministic reference  
+
+Correctness is therefore defined not by:
+
+- what happened during execution  
+
+but by:
+
+- whether the result matches deterministic reconstruction  

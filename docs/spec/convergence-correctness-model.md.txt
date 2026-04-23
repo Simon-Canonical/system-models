@@ -1,0 +1,45 @@
+# Convergence-Based Correctness Model
+
+## Overview
+
+This document defines correctness and convergence.
+
+Definitions are specified in terminology.md.
+
+---
+
+## Canonical Event Sequence
+
+The canonical event sequence is the authoritative source of booking state.
+
+---
+
+## Derived State
+
+Derived state is evaluated against deterministic reconstruction.
+
+---
+
+## Correctness
+
+Correctness is defined in terminology.md.
+
+---
+
+## Convergence
+
+Convergence is defined in terminology.md.
+
+---
+
+## Deterministic Reconstruction
+
+Deterministic reconstruction is defined in terminology.md.
+
+A determinism violation occurs when identical canonical event sequences produce different resulting booking state.
+
+---
+
+## System Constraints
+
+System constraints are defined in terminology.md.

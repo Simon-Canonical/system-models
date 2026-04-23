@@ -1,0 +1,35 @@
+# System Principles
+
+## Single Source of Truth
+
+Booking state is derived from the canonical event sequence.
+
+---
+
+## Determinism
+
+Deterministic reconstruction is required.
+
+---
+
+## Derived State
+
+Derived state has no authority.
+
+---
+
+## Convergence
+
+Convergence is required for correctness.
+
+---
+
+## System Constraints
+
+System constraints must be satisfied.
+
+---
+
+## Divergence
+
+Divergence is considered invalid.

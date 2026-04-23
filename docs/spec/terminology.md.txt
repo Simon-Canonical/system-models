@@ -1,0 +1,76 @@
+# Terminology
+
+## Canonical Event Sequence
+
+The authoritative sequence of events representing system truth.
+
+---
+
+## Booking State
+
+The domain state representing a booking.
+
+Booking state is uniquely derivable from the canonical event sequence and identical under deterministic reconstruction.
+
+---
+
+## Derived State
+
+Any materialized or observable booking state produced from the canonical event sequence.
+
+Derived state has no authority.
+
+---
+
+## Deterministic Reconstruction
+
+The process of producing booking state from the canonical event sequence such that identical inputs produce identical results.
+
+---
+
+## Convergence
+
+The condition where runtime derived booking state is identical to the state produced by deterministic reconstruction of the canonical event sequence.
+
+---
+
+## Correctness
+
+Correctness is defined as:
+
+- booking state is uniquely derivable from the canonical event sequence  
+- booking state is identical under deterministic reconstruction  
+- system constraints are satisfied  
+
+---
+
+## System Constraints
+
+Conditions that must hold for correctness, defined by:
+
+- deterministic reconstruction equivalence  
+- absence of divergence between derived state and reconstructed state  
+
+---
+
+## Control State
+
+System-level coordination state required for execution that is not part of booking state.
+
+---
+
+## Canonical State
+
+The authoritative event sequence representing system truth.
+
+---
+
+## State Classification Status
+
+Classification of state definitions:
+
+- Design  
+- Implemented  
+- In Progress  
+
+This classification does not represent runtime state values.
