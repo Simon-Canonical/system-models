@@ -1,5 +1,11 @@
 # Deterministic Booking Execution Platform
 
+Designed for systems where:
+
+- conflicting state is unacceptable (e.g. booking, scheduling)
+- correctness must be provable
+- state must be reproducible from a single source of truth
+
 ## Overview
 
 A deterministic, event-sourced system where correctness is defined through convergence.
